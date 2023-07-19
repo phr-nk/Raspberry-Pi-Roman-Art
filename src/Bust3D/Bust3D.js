@@ -36,8 +36,8 @@ class ThreeDScene extends React.Component {
       1,
       50
     );
-    mainCamera.position.z = 20;
-    mainCamera.position.y = 0.4;
+    mainCamera.position.z = 25;
+    mainCamera.position.y = 0;
     mainCamera.position.x = -0.03;
 
     const occlusionCamera = mainCamera.clone();
@@ -120,9 +120,10 @@ class ThreeDScene extends React.Component {
       undefined,
       console.error
     );
-    modelContainer.rotation.y = -2;
-    modelContainer.position.x = -0.05;
+    modelContainer.rotation.y = 0;
+    modelContainer.position.x = 0;
     modelContainer.rotation.x = -0.08;
+    modelContainer.scale.set(0.15, 0.15, 0.15);
     const renderTarget = new THREE.WebGLRenderTarget(
       window.innerWidth,
       window.innerHeight
@@ -250,7 +251,7 @@ class ThreeDScene extends React.Component {
     //Animations:
 
     // Mouse Move
-    /*
+
     function mousemove(e) {
       modelContainer.rotation.y =
         2 * ((e.clientX / window.innerWidth) * 0.7 - 0.4);
@@ -258,7 +259,7 @@ class ThreeDScene extends React.Component {
     if (this.props.animation == "follow") {
       this.mount.addEventListener("mousemove", mousemove);
     }
-*/
+
     //Rotate
 
     //effect composer
@@ -321,7 +322,7 @@ class ThreeDScene extends React.Component {
         0.85
       );
       bloomPass.threshold = 0.25;
-      bloomPass.strength = 0.1;
+      bloomPass.strength = 0.6;
       bloomPass.radius = 0.2;
 
       composer.addPass(bloomPass);
@@ -376,7 +377,7 @@ class ThreeDScene extends React.Component {
       composer.render();
       //==============================
       // modelContainer.rotation.y += 0.0025;
-      modelContainer.rotation.y = Math.sin(Date.now() * 0.0005) * Math.PI * 0.2;
+      //modelContainer.rotation.y = Math.sin(Date.now() * 0.0005) * Math.PI * 0.2;
       animationFrame = requestAnimationFrame(render);
 
       isRendering = true;
