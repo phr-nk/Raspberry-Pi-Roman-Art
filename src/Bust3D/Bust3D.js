@@ -36,8 +36,8 @@ class ThreeDScene extends React.Component {
       1,
       50
     );
-    mainCamera.position.z = 47;
-    mainCamera.position.y = 0.04;
+    mainCamera.position.z = 20;
+    mainCamera.position.y = 0.4;
     mainCamera.position.x = -0.03;
 
     const occlusionCamera = mainCamera.clone();
@@ -121,9 +121,8 @@ class ThreeDScene extends React.Component {
       console.error
     );
     modelContainer.rotation.y = -2;
-    modelContainer.position.x = -0.07;
+    modelContainer.position.x = -0.05;
     modelContainer.rotation.x = -0.08;
-    modelContainer.scale.set(0.27, 0.27, 0.27);
     const renderTarget = new THREE.WebGLRenderTarget(
       window.innerWidth,
       window.innerHeight
@@ -322,7 +321,7 @@ class ThreeDScene extends React.Component {
         0.85
       );
       bloomPass.threshold = 0.25;
-      bloomPass.strength = 0.5;
+      bloomPass.strength = 0.1;
       bloomPass.radius = 0.2;
 
       composer.addPass(bloomPass);
@@ -333,6 +332,7 @@ class ThreeDScene extends React.Component {
       composer.addPass(ripplePass);
     }
     // Handle Window Resize
+
     function resizeRenderer() {
       if (window.innerWidth <= 500) {
         rippleCanvas.width = rippleCanvas.style.width = window.innerWidth;
