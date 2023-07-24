@@ -123,7 +123,7 @@ class ThreeDScene extends React.Component {
     modelContainer.rotation.y = 0;
     modelContainer.position.x = 0;
     modelContainer.rotation.x = -0.08;
-    modelContainer.scale.set(0.01, 0.01, 0.01);
+    modelContainer.scale.set(0.013, 0.013, 0.013);
     const renderTarget = new THREE.WebGLRenderTarget(
       window.innerWidth,
       window.innerHeight
