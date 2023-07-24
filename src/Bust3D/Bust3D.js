@@ -36,8 +36,8 @@ class ThreeDScene extends React.Component {
       1,
       50
     );
-    mainCamera.position.z = 30;
-    mainCamera.position.y = 2.2;
+    mainCamera.position.z = 0;
+    mainCamera.position.y = 0;
     mainCamera.position.x = 0;
 
     const occlusionCamera = mainCamera.clone();
@@ -123,7 +123,8 @@ class ThreeDScene extends React.Component {
     modelContainer.rotation.y = 0;
     modelContainer.position.x = 0;
     modelContainer.rotation.x = -0.08;
-    modelContainer.scale.set(0.007, 0.007, 0.007);
+    modelContainer.scale.set(0.013, 0.013, 0.013);
+    modelContainer.position.y = -0.4;
     const renderTarget = new THREE.WebGLRenderTarget(
       window.innerWidth,
       window.innerHeight
