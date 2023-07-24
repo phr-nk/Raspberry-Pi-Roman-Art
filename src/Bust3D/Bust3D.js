@@ -37,7 +37,7 @@ class ThreeDScene extends React.Component {
       50
     );
     mainCamera.position.z = 45;
-    mainCamera.position.y = 1;
+    mainCamera.position.y = 2;
     mainCamera.position.x = -0.03;
 
     const occlusionCamera = mainCamera.clone();
